@@ -18,33 +18,40 @@ import java.util.List;
 /**
  * Created by fml on 2015/12/3 0003.
  */
-public class RecyclerViewMenuAdapter extends RecyclerView.Adapter<RecyclerViewMenuAdapter.ViewHolder>{
+public class RecyclerViewMenuAdapter extends RecyclerView.Adapter<RecyclerViewMenuAdapter.ViewHolder> {
+
     private LayoutInflater mLayoutInflater;
     protected List<String> mListMenuData;
     private Context mContext;
     private OnItemClickListener mOnItemClickListener;
+
     //定义接口
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
+
         void onItemClick(View v, int position);
+
         void onItemLongClick(View v, int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener){
-        this.mOnItemClickListener = listener ;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
     }
-    public RecyclerViewMenuAdapter(Context context, List<String> datas){
+
+    public RecyclerViewMenuAdapter(Context context, List<String> datas) {
         this.mListMenuData = datas;
         this.mContext = context;
         mLayoutInflater = LayoutInflater.from(mContext);
     }
+
     //创建ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i("TAG", "Hellow");
-        View v = mLayoutInflater.inflate(R.layout.item_menu,parent,false);
+        View v = mLayoutInflater.inflate(R.layout.item_menu, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
+
     //绑定ViewHolder
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
@@ -61,34 +68,39 @@ public class RecyclerViewMenuAdapter extends RecyclerView.Adapter<RecyclerViewMe
         }
         setOnListtener(holder);
     }
+
     //触发
-    protected void setOnListtener(final RecyclerView.ViewHolder holder){
-        if(mOnItemClickListener != null){
+    protected void setOnListtener(final RecyclerView.ViewHolder holder) {
+        if (mOnItemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int layoutPosition = holder.getPosition();
-                    mOnItemClickListener.onItemClick(holder.itemView,layoutPosition);
+                    mOnItemClickListener.onItemClick(holder.itemView, layoutPosition);
                 }
             });
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
                     int layoutPosition = holder.getPosition();
-                    mOnItemClickListener.onItemLongClick(holder.itemView,layoutPosition);
+                    mOnItemClickListener.onItemLongClick(holder.itemView, layoutPosition);
                     return true;
                 }
             });
         }
     }
+
     @Override
     public int getItemCount() {
         return mListMenuData.size();
     }
-    class ViewHolder extends RecyclerView.ViewHolder{
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+
         TextView mTextView;
         LinearLayout mLinearLayout;
-        View viewRed , viewV;
+        View viewRed, viewV;
+
         public ViewHolder(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.item_menu_text);

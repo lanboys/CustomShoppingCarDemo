@@ -92,10 +92,10 @@ public class MainActivity extends BaseActivity {
      * 模拟网络请求数据
      */
     private void initHttp() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 18; i++) {
             stringMenuList.add("1111");
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             stringContentList.add("2222");
         }
         setMenuCommonadapter();

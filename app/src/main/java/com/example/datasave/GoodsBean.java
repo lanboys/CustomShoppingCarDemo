@@ -7,7 +7,8 @@ import com.lidroid.xutils.db.annotation.Table;
  * Created by fml on 2015/12/17 0017.
  */
 @Table(name = "goods")
-public class GoodsBean extends GoodsBase{
+public class GoodsBean extends GoodsBase {
+
     @Column(column = "menupos")
     private int menupos;
     @Column(column = "goodsid")
