@@ -88,8 +88,9 @@ public class TestSectionedAdapter extends SectionedBaseAdapter {
                 viewHolder.shoppingNum.setText(product.getNumber()+"");
                 if (callBackListener != null) {
                     callBackListener.updateProduct(product, "1");
-                } else {
                 }
+
+
                 if(mHolderClickListener!=null){
                     int[] start_location = new int[2];
                     viewHolder.shoppingNum.getLocationInWindow(start_location);//获取点击商品图片的位置
@@ -109,7 +110,6 @@ public class TestSectionedAdapter extends SectionedBaseAdapter {
                     viewHolder.shoppingNum.setText(product.getNumber()+"");
                     if (callBackListener != null) {
                         callBackListener.updateProduct(product, "2");
-                    } else {
                     }
                 }
             }
@@ -157,11 +157,11 @@ public class TestSectionedAdapter extends SectionedBaseAdapter {
         public TextView reduce;
     }
 
-    public void SetOnSetHolderClickListener(HolderClickListener holderClickListener){
+    public void setOnHolderClickListener(HolderClickListener holderClickListener){
         this.mHolderClickListener = holderClickListener;
     }
     public interface HolderClickListener{
-        public void onHolderClick(Drawable drawable, int[] start_location);
+          void onHolderClick(Drawable drawable, int[] start_location);
     }
     
 

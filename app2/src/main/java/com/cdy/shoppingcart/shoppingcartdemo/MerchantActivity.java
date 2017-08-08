@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 /**
  * Created by 曹博 on 2016/6/6.
- * 小区商家商家详情        http://blog.csdn.net/jaynm/article/details/51857395
+ * 小区商家商家详情
  */
 public class MerchantActivity extends FragmentActivity {
     private RadioGroup discount_layout;

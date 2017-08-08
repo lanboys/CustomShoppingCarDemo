@@ -76,6 +76,7 @@ public abstract class GoodsAnimUtil {
         // 计算位移
         int endY = end_location[1] - start_location[1];// 动画位移的y坐标
         int endX = end_location[0] - start_location[0] + (mImgcar.getWidth() / 2);// 动画位移的X坐标
+
         TranslateAnimation translateAnimationX = new TranslateAnimation(0, endX, 0, 0);
         translateAnimationX.setInterpolator(new LinearInterpolator());
         translateAnimationX.setRepeatCount(0);// 动画重复执行的次数

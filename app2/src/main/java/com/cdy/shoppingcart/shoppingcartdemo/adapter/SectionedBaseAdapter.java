@@ -5,10 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.cdy.shoppingcart.shoppingcartdemo.view.PinnedHeaderListView;
+import com.cdy.shoppingcart.shoppingcartdemo.view.PinnedSectionedHeaderAdapter;
 
-
-public abstract class SectionedBaseAdapter extends BaseAdapter implements PinnedHeaderListView.PinnedSectionedHeaderAdapter {
+public abstract class SectionedBaseAdapter extends BaseAdapter implements PinnedSectionedHeaderAdapter {
 
     private static int HEADER_VIEW_TYPE = 0;
     private static int ITEM_VIEW_TYPE = 0;
@@ -206,5 +205,4 @@ public abstract class SectionedBaseAdapter extends BaseAdapter implements Pinned
         mSectionCount = getSectionCount();
         return mSectionCount;
     }
-
 }

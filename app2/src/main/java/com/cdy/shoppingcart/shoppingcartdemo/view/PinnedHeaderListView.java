@@ -14,23 +14,9 @@ import android.widget.ListView;
 
 import com.cdy.shoppingcart.shoppingcartdemo.adapter.SectionedBaseAdapter;
 
-
 public class PinnedHeaderListView extends ListView implements OnScrollListener {
 
     private OnScrollListener mOnScrollListener;
-
-    public static interface PinnedSectionedHeaderAdapter {
-        public boolean isSectionHeader(int position);
-
-        public int getSectionForPosition(int position);
-
-        public View getSectionHeaderView(int section, View convertView, ViewGroup parent);
-
-        public int getSectionHeaderViewType(int section);
-
-        public int getCount();
-
-    }
 
     private PinnedSectionedHeaderAdapter mAdapter;
     private View mCurrentHeader;
@@ -134,7 +120,7 @@ public class PinnedHeaderListView extends ListView implements OnScrollListener {
     private void ensurePinnedHeaderLayout(View header) {
         if (header.isLayoutRequested()) {
             int widthSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(), mWidthMode);
-            
+
             int heightSpec;
             ViewGroup.LayoutParams layoutParams = header.getLayoutParams();
             if (layoutParams != null && layoutParams.height > 0) {
@@ -180,6 +166,7 @@ public class PinnedHeaderListView extends ListView implements OnScrollListener {
     }
 
     public static abstract class OnItemClickListener implements AdapterView.OnItemClickListener {
+
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int rawPosition, long id) {
             SectionedBaseAdapter adapter;
@@ -202,6 +189,5 @@ public class PinnedHeaderListView extends ListView implements OnScrollListener {
         public abstract void onItemClick(AdapterView<?> adapterView, View view, int section, int position, long id);
 
         public abstract void onSectionClick(AdapterView<?> adapterView, View view, int section, long id);
-
     }
 }
