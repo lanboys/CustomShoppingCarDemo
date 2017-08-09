@@ -222,7 +222,23 @@ public class ProductsFragment extends Fragment implements View.OnClickListener, 
                 //    }
                 //});
 
-                mAnimLayout.doAnimator(start_location, end_location, null);
+                //start_location[0] = 200;
+                //start_location[1] = 200;
+                //end_location[0] = 500;
+                //end_location[1] = 600;
+
+                //start_location[0] = 500;
+                //start_location[1] = 0;
+                //end_location[0] = 0;
+                //end_location[1] = 800;
+
+                //start_location[0] = 930;
+                //start_location[1] = 646;
+                //end_location[0] = 45;
+                //end_location[1] = 1817;
+
+
+                mAnimLayout.doAnimator1(start_location, end_location, null);
             }
         });
 
